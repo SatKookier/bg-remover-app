@@ -48,3 +48,22 @@ export const LayersIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.326.497.326.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387l1.64.656a6 6 0 004.18-3.028l1.913-.319M6.115 5.19A9 9 0 0112 3c1.112 0 2.163.264 3.095.732M6.115 5.19A9 9 0 003 12c0 1.112.264 2.163.732 3.095m0-6.19A9 9 0 005.19 6.115M12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
   </svg>
 );
+
+// ▼ このコードをファイルの末尾に追加してください ▼
+export const XIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+);

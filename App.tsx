@@ -1,10 +1,14 @@
+// App.tsx
 
 import React, { useState, useCallback, ChangeEvent, useRef } from 'react';
-import { UploadIcon, AlertTriangleIcon, InfoIcon, ImageIcon, SparklesIcon, DownloadIcon } from './components/IconLib';
+// ▼ 変更点 1/4: XIcon（閉じるボタン）を追加インポートします
+import { UploadIcon, AlertTriangleIcon, InfoIcon, ImageIcon, SparklesIcon, DownloadIcon, XIcon } from './components/IconLib';
 import { FileUploadButton } from './components/FileUploadButton';
 import { ImagePreview } from './components/ImagePreview';
 import { Spinner } from './components/Spinner';
 import { ActionButton } from './components/ActionButton';
+// ▼ 変更点 2/4: 作成したPrivacyPolicyページをインポートします
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
 
 const MAX_FILE_SIZE_MB = 30;
 const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
@@ -37,6 +41,9 @@ const App: React.FC = () => {
   const [isProcessingLocally, setIsProcessingLocally] = useState<boolean>(false);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+  // ▼ 変更点 3/4: プライバシーポリシーの表示・非表示を管理する状態を追加します
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState<boolean>(false);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -136,20 +143,20 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900">
-      <header className="text-center mb-6 w-full max-w-5xl">
-        <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 flex items-center justify-center">
+      <header className="text-center mb-6 w-full max-w-5xl py-4">
+        <h1 className="text-4xl sm:text-5xl font-bold leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500 flex items-center justify-center">
           <ImageIcon className="w-10 h-10 mr-3 text-indigo-400" />
-          Free White Background Remover
+          WhiteBG Logo Eraser
         </h1>
-        <p className="text-slate-400 mt-3 text-lg max-w-3xl mx-auto">
-          Upload your image to remove its white (#FFFFFF) background, processed directly in your browser.
+        <p className="text-slate-400 mt-3 text-lg leading-relaxed max-w-3xl mx-auto">
+          Upload your logo to remove white background
         </p>
       </header>
 
-      <div className="ad-placeholder w-full max-w-5xl h-24 mb-6 mx-auto rounded-lg">
+      {/* <div className="ad-placeholder w-full max-w-5xl h-24 mb-6 mx-auto rounded-lg">
         Top Banner Ad Placeholder (e.g., 728x90 or responsive)
         <br/> <span className="text-xs">(Actual ad integration requires an ad network script)</span>
-      </div>
+      </div> */}
 
       <main className="w-full max-w-5xl bg-slate-800 shadow-2xl rounded-xl p-6 sm:p-10">
         <div className="mb-8">
@@ -262,16 +269,25 @@ const App: React.FC = () => {
         
         <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
 
-        <div className="ad-placeholder w-full h-20 mt-10 rounded-lg">
+        {/* <div className="ad-placeholder w-full h-20 mt-10 rounded-lg">
           Bottom Ad Placeholder (e.g., responsive banner)
           <br/> <span className="text-xs">(Actual ad integration requires an ad network script)</span>
-        </div>
+        </div> */}
       </main>
 
+      {/* ▼ 変更点 4/4: フッターを更新し、プライバシーポリシー表示機能を追加します ▼ */}
       <footer className="text-center mt-12 text-slate-500 text-sm w-full max-w-5xl px-4">
-        <p>&copy; {new Date().getFullYear()} White Background Remover. All rights reserved (pending actual registration!).</p>
+        <div className="flex justify-center space-x-4 mb-4">
+          <button onClick={() => setShowPrivacyPolicy(true)} className="hover:text-sky-400 transition-colors">
+            プライバシーポリシー
+          </button>
+        </div>
+        <p>&copy; {new Date().getFullYear()} WhiteBG Logo Eraser. All rights reserved.</p>
         <p className="mt-1">This tool processes images directly in your browser. No images are uploaded to a server for background removal.</p>
       </footer>
+
+      {/* ポップアップ表示機能 */}
+      {showPrivacyPolicy && <PrivacyPolicy onClose={() => setShowPrivacyPolicy(false)} />}
     </div>
   );
 };
