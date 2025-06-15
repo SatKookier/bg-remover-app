@@ -14,24 +14,24 @@ export const PrivacyPolicy: React.FC<Props> = ({ onClose }) => {
         <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
           <XIcon className="w-6 h-6" />
         </button>
-        <h2 className="text-2xl font-bold text-sky-400 mb-4">プライバシーポリシー</h2>
+        <h2 className="text-2xl font-bold text-sky-400 mb-4">Privacy Policy</h2>
         <div className="text-slate-300 space-y-4 text-sm leading-relaxed">
-          <p>当サイト（以下、本サービス）は、利用者のプライバシーを尊重します。以下に、本サービスがどのように情報を扱うかについて説明します。</p>
+          <p>This website (hereinafter referred to as "the Service") respects the privacy of its users. Below is an explanation of how information is handled by the Service.</p>
           
-          <h3 className="text-lg font-semibold text-sky-500 pt-3">画像データについて</h3>
-          <p>本サービスで行われる画像の背景除去処理は、すべてお客様のブラウザ内（クライアントサイド）で完結します。お客様がアップロードされた画像データが、本サービスのサーバーに送信または保存されることは一切ありません。</p>
+          <h3 className="text-lg font-semibold text-sky-500 pt-3">About Image Data</h3>
+          <p>All background removal processing of images on this Service is completed entirely within your browser (client-side). The images you upload are never sent to or stored on our servers.</p>
           
-          <h3 className="text-lg font-semibold text-sky-500 pt-3">広告配信について</h3>
-          <p>本サービスは、第三者配信の広告サービス「Google AdSense」を利用する予定です。広告配信事業者は、ユーザーの興味に応じたパーソナライズ広告を表示するためにCookieを使用することがあります。Cookieを無効にする設定およびGoogle AdSenseに関する詳細は「<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline">広告 - ポリシーと規約 – Google</a>」のページをご確認ください。</p>
+          <h3 className="text-lg font-semibold text-sky-500 pt-3">About Ads</h3>
+          <p>This Service plans to use third-party advertising services such as Google AdSense. Ad providers may use cookies to display personalized ads based on user interests. For more information on disabling cookies and Google AdSense, please refer to the <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-sky-400 hover:underline">Advertising – Policies & Terms – Google</a> page.</p>
           
-          <h3 className="text-lg font-semibold text-sky-500 pt-3">アクセス解析ツールについて</h3>
-          <p>本サービスは、今後のサービス向上のため、Googleによるアクセス解析ツール「Google Analytics」を利用する可能性があります。Google Analyticsはトラフィックデータの収集のためにCookieを使用します。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。</p>
+          <h3 className="text-lg font-semibold text-sky-500 pt-3">About Analytics Tools</h3>
+          <p>This Service may use Google Analytics, a web analytics tool provided by Google, to improve the Service in the future. Google Analytics uses cookies to collect traffic data. This data is collected anonymously and does not identify individuals.</p>
 
-          <h3 className="text-lg font-semibold text-sky-500 pt-3">免責事項</h3>
-          <p>本サービスの利用によって生じたいかなる損害についても、当方は一切の責任を負いません。本サービスの内容は、予告なく変更または終了することがあります。</p>
+          <h3 className="text-lg font-semibold text-sky-500 pt-3">Disclaimer</h3>
+          <p>We are not responsible for any damages arising from the use of this Service. The contents of this Service may be changed or terminated without notice.</p>
 
-          <h3 className="text-lg font-semibold text-sky-500 pt-3">制定日</h3>
-          <p>2025年6月15日</p>
+          <h3 className="text-lg font-semibold text-sky-500 pt-3">Effective Date</h3>
+          <p>June 15, 2025</p>
         </div>
       </div>
     </div>

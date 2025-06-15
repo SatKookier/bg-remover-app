@@ -279,7 +279,7 @@ const App: React.FC = () => {
       <footer className="text-center mt-12 text-slate-500 text-sm w-full max-w-5xl px-4">
         <div className="flex justify-center space-x-4 mb-4">
           <button onClick={() => setShowPrivacyPolicy(true)} className="hover:text-sky-400 transition-colors">
-            プライバシーポリシー
+            Privacy Policy
           </button>
         </div>
         <p>&copy; {new Date().getFullYear()} WhiteBG Logo Eraser. All rights reserved.</p>
