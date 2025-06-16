@@ -10,6 +10,7 @@ import { Spinner } from './components/Spinner';
 import { ActionButton } from './components/ActionButton';
 // ▼ 変更点 2/4: 作成したPrivacyPolicyページをインポートします
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { Contact } from './pages/Contact';
 
 const MAX_FILE_SIZE_MB = 30;
 const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
@@ -45,6 +46,7 @@ const App: React.FC = () => {
   
   // ▼ 変更点 3/4: プライバシーポリシーの表示・非表示を管理する状態を追加します
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState<boolean>(false);
+  const [showContact, setShowContact] = useState<boolean>(false);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -282,6 +284,9 @@ const App: React.FC = () => {
           <button onClick={() => setShowPrivacyPolicy(true)} className="hover:text-sky-400 transition-colors">
             Privacy Policy
           </button>
+          <button onClick={() => setShowContact(true)} className="hover:text-sky-400 transition-colors">
+            Contact
+          </button>
         </div>
         <p>&copy; {new Date().getFullYear()} WhiteBG Logo Eraser. All rights reserved.</p>
         <p className="mt-1">This tool processes images directly in your browser. No images are uploaded to a server for background removal.</p>
@@ -289,6 +294,7 @@ const App: React.FC = () => {
 
       {/* ポップアップ表示機能 */}
       {showPrivacyPolicy && <PrivacyPolicy onClose={() => setShowPrivacyPolicy(false)} />}
+      {showContact && <Contact onClose={() => setShowContact(false)} />}
       <Analytics />
     </div>
   );

@@ -25,7 +25,7 @@ export const Contact: React.FC<Props> = ({ onClose }) => {
             marginHeight="0" 
             marginWidth="0"
           >
-            loading…
+            読み込んでいます…
           </iframe>
         </div>
       </div>
